@@ -1,104 +1,61 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
+/* signup.css */
 
-body{
-  background: rgb(34,193,195);
-  background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
-  font-family: "work sans";
-}
-html{
-  font-size: 100%;
-}
-
-.formCenter {
-  max-width: 800px;
-  width: 30%;
-  height: 60%;
-  margin: 100px auto;
-  background-color: #FFFFFF;
-  border-radius: 25px;
-  position: relative;
-}
-
-.formFields {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2rem;
-  max-width: 100%;
-  margin-top: 20px; 
-}
-
-.formField {
-  margin: 10px 0;
-}
-
-.formFieldLabel {
-  align-self: start;
-  padding-left: 4.5rem;
-  padding-bottom: 0.5rem;
-  color: #C5C6C7; 
-  display: block;
-}
-
-.formFieldInput {
-  width: 80%;
-  box-sizing: border-box;
-  border: none;
-  font-size: 1.3rem;
-  padding-left: 1.5rem;
-  padding-bottom: 1rem;
-  box-shadow: inset 0px -3px 0px 0px #C5C6C7; 
-  transition: box-shadow 0.2s ease-in;
-  margin-bottom: 10px;
-  background: #1F2833; 
-  color: #66FCF1; 
-}
-
-.formFieldInput:focus{
-   box-shadow: inset 0px -3px 0px 0px #66FCF1; 
-   outline: none;
-}
-
-.formFieldInput::-webkit-input-placeholder{
-  opacity: 1;
-  transition: opacity 0.25s ease-out;
-  color: #C5C6C7; 
-}
-
-.formFieldInput:hover::-webkit-input-placeholder,
-.formFieldInput:focus::-webkit-input-placeholder{
-  opacity: 0;
-}
-
-.formFieldButton {
-  border-radius: 25px;
-  width: 80%;
-  height: 40px;
-  background-color: #66FCF1; 
-  color: #1F2833; 
-}
-
-.formFieldCheckboxLabel {
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  font-size: 0.8em; 
-  color: #C5C6C7; 
-}
-
-.formField {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  margin: 10px 0;
-}
-
-.formFieldButton {
-  display: flex;
-  justify-content: center; 
-  border-radius: 25px;
-  width: 80%;
-  height: 40px;
-  background-color: #45A29E; 
-  color: #1F2833; 
-}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    font-size: 0.9em;
+    color: #8e8e8e;
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    margin-top: 5px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 9px;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    background-color: #0095f6;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0077b6;
+  }
+  
+  input[type="submit"]:disabled {
+    background-color: #b2dffc;
+  }
+  
+  input[type="submit"]:disabled:hover {
+    cursor: default;
+  }
+  
