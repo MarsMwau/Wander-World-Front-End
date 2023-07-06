@@ -1,3 +1,5 @@
+// import "./FeedPost.css";
+
 function FeedPost({ post }) {
     const likesCount = post.likes ? post.likes.length : 0;
     const commentsCount = post.comments ? post.comments.length : 0;
