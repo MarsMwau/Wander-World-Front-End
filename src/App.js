@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './components/Login';
 import SignUpPage from './components/SignUp';
 import Feed from './components/Feed';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import './App.css';
 import NewPost from './components/NewPost';
 import Searchbar from './components/Searchbar';
@@ -20,7 +20,7 @@ function App() {
           <Route path="/search" element={<Searchbar />} />
           <Route path="/my-profile" element={<UserProfile />} />
         </Routes>
-        <Navigate to="/my-profile" />
+        {/* <Navigate to="/my-profile" /> */}
       </div>
     </Router>
   );
