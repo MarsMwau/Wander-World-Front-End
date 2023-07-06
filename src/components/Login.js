@@ -26,7 +26,7 @@ function Login() {
 
       console.log('token', data.token);
       // Redirect to the feed page
-      navigate("/feed");
+      navigate("/my-profile");
     } catch (error) {
       console.error("Login failed", error);
     }
