@@ -10,5 +10,12 @@
   font-size: calc(10px + 2vmin);
   color: black;
   padding-top: 100px; /* Adjust this value depending on the height of your navbar */
+
+
+  background-image: url(https://i.pinimg.com/564x/ea/6a/41/ea6a4187f002084aeea7207c08ae628d.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 

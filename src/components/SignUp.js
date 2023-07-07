@@ -1,6 +1,7 @@
 // SignUp.js
 import React, { useState } from "react";
 import "./signup.css";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -55,6 +56,9 @@ function SignUp() {
         <input type="password" value={passwordConfirmation} onChange={e => setPasswordConfirmation(e.target.value)} />
       </label>
       <input type="submit" value="Sign Up" />
+      <p>
+        <Link to="/login">Already have an account?</Link>
+      </p>
     </form>
   );
 }

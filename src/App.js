@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './components/Login';
 import SignUpPage from './components/SignUp';
 import Feed from './components/Feed';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import './App.css';
 import NewPost from './components/NewPost';
 import Searchbar from './components/Searchbar';
 import UserProfile from './components/UserProfile';
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/feed" element={<Feed />} />
@@ -20,7 +22,7 @@ function App() {
           <Route path="/search" element={<Searchbar />} />
           <Route path="/my-profile" element={<UserProfile />} />
         </Routes>
-        <Navigate to="/my-profile" />
+        {/* <Navigate to="/login" /> */}
       </div>
     </Router>
   );

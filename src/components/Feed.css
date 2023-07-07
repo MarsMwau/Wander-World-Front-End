@@ -1,6 +1,35 @@
-.feed{
-    flex:5.5
-}
-.feedWrapper{
+.feed {
+    flex: 5.5;
+  }
+  .feedWrapper {
     padding: 20px;
-}
+  }
+  /* Customize the styles for the posts */
+  .feedWrapper .post {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+  }
+  .feedWrapper .post h2 {
+    margin-top: 0;
+  }
+  .feedWrapper .post .image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+  .feedWrapper .post .caption {
+    margin-top: 10px;
+  }
+  .feedWrapper .post .likes {
+    color: #262626;
+    font-weight: bold;
+  }
+  .feedWrapper .post .comments {
+    color: #8E8E8E;
+  }
+  .feedWrapper .post .timestamp {
+    color: #8E8E8E;
+    font-size: 12px;
+  }
