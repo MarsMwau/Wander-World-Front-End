@@ -10,7 +10,7 @@ form {
     padding: 20px;
     border: 1px solid #dbdbdb;
     border-radius: 1px;
-    background-color: #ffffff;
+    background-color: #090404;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
   
@@ -20,14 +20,14 @@ form {
     align-items: flex-start;
     width: 100%;
     font-size: 0.9em;
-    color: #8e8e8e;
+    color: #f88a14;
     margin-bottom: 10px;
   }
   
   input[type="email"],
   input[type="text"],
   input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 9px;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
@@ -41,7 +41,7 @@ form {
     border: none;
     border-radius: 3px;
     color: #ffffff;
-    background-color: #0095f6;
+    background-color: #f88a14;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
