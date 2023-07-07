@@ -22,7 +22,6 @@ function App() {
           <Route path="/search" element={<Searchbar />} />
           <Route path="/my-profile" element={<UserProfile />} />
         </Routes>
-        {/* <Navigate to="/login" /> */}
       </div>
     </Router>
   );
