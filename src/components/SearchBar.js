@@ -7,20 +7,16 @@ const SearchBar = ({ handleSearch }) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleButtonClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     handleSearch(searchTerm);
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleChange}
-      />
-      <button onClick={handleButtonClick}>Search</button>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search..." />
+      <button type="submit">Search</button>
+    </form>
   );
 };
 
