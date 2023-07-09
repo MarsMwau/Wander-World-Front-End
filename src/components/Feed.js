@@ -1,95 +1,44 @@
-// import React, { useEffect, useState } from "react";
-// import FeedPost from "./FeedPost";
-// import "./Feed.css"
+import React, { useEffect, useState } from 'react';
+import FeedPost from './FeedPost';
 
-// function Feed() {
-//   const [users, setUsers] = useState([]);
-//   useEffect(() => {
-//     fetchUsers();
-//   }, []);
-//   const fetchUsers = async () => {
-//     try {
-//       const response = await fetch("http://localhost:3000/users",{
-//         method: 'GET',
-//         headers: {
-//           'Content-Type': 'application/json',
-//           'Authorization': 'Bearer ${token}'
-//         }
-//       });
-
-//       localStorage.setItem("token", data.token);
-
-//       const data = await response.json();
-//       setUsers(data);
-//     } catch (error) {
-//       console.error("Failed to fetch users", error);
-//     }
-//   };
-
-//   return (
-//     <div className="feed">
-//       <h1>This is the feed</h1>
-//       <div className="feedWrapper">
-//       {users.map((user) => (
-//         <div key={user.id}>
-//           <h2>Username: {user.username}</h2>
-//           {user.posts.map((post) => (
-//             <FeedPost key={post.id} post={post} />
-//           ))}
-//         </div>
-//       ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Feed;
-
-import React, { useEffect, useState } from "react";
-import FeedPost from "./FeedPost";
-import "./Feed.css";
-
-function Feed() {
-  const [users, setUsers] = useState([]);
+const Feed = () => {
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetchUsers();
+    const fetchPosts = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch('http://localhost:3000/posts', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setPosts(data);
+        } else {
+          console.error('Invalid response: Posts data is not an array');
+        }
+      }
+      catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchPosts();
   }, []);
-
-  const fetchUsers = async () => {
-    try {
-      const token = localStorage.getItem("token");
-
-      const response = await fetch("http://localhost:3000/users", {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` // Include the token in the Authorization header
-        },
-      });
-
-      const data = await response.json();
-      setUsers(data);
-    } catch (error) {
-      console.error("Failed to fetch users", error);
-    }
-  };
 
   return (
     <div className="feed">
-      <h1>This is the feed</h1>
-      <div className="feedWrapper">
-        {users.map((user) => (
-          <div key={user.id}>
-            <h2>Username: {user.username}</h2>
-            {user.posts.map((post) => (
-              <FeedPost key={post.id} post={post} />
-            ))}
-          </div>
-        ))}
-      </div>
+      {posts.length > 0 ? (
+        <FeedPost posts={posts} />
+      ) : (
+        <p>Loading</p>
+      )}
     </div>
   );
-}
+};
 
 export default Feed;
