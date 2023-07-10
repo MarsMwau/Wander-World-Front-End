@@ -1,4 +1,4 @@
-# Wander World Frontend
+# Wander World Front-End
 
 ## Description
 This is the frontend of Wander World, Wander World is not merely a web application, it’s a place where like-minded individuals can share stories and deeper still, a place where they can share journeys. It is a window to the world. Where each one of us can live vicariously through adventurers who have gone before us. 
@@ -40,6 +40,10 @@ The following people contributed to this project:
 2. Melchizedek -https://github.com/melmuya
 3. Nathan -https://github.com/nathan-netizenn
 4. William -https://github.com/willtemmy
+
+## Back-end Repo Link
+The Back-end is developed with Rails.
+- https://github.com/MarsMwau/Wander-World-Back-End 
 
 ## Contact Information
 If you have any questions or concerns, please contact me at marthamumbua16@gmail.com
