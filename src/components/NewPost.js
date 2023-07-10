@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import NewPostForm from './NewPostForm';
-
+import "./NewPost.css";
 const NewPost = () => {
   const navigate = useNavigate();
   const handleCreatePost = async (newPost) => {
@@ -24,8 +24,7 @@ const NewPost = () => {
   };
 
   return (
-    <div>
-      <h2>Create a New Post</h2>
+    <div className="New-Post">
       <NewPostForm handleCreatePost={handleCreatePost} />
     </div>
   );

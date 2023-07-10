@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserForm from './UserForm';
-import { Avatar } from '@material-ui/core';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import "./Userprofile.css"
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -44,11 +41,6 @@ const UserProfile = () => {
     );
 
     return JSON.parse(jsonPayload);
-  };
-
-  const handleUpdateUser = (updatedUser) => {
-    setUser(updatedUser);
-    setEditMode(false);
   };
 
   const deletePost = async (postId) => {
@@ -107,82 +99,64 @@ const UserProfile = () => {
     setEditMode(!editMode);
   };
 
+  const handleUpdateUser = (updatedUser) => {
+    setUser(updatedUser);
+    setEditMode(false);
+  };
+
   if (!user) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="user-profile">
-    <div className="user-info">
-      <div className="user-header">
-        <Avatar src={<AccountCircleIcon />} className="user-avatar" />
-        <h2>{user.username}</h2>
-      </div>
+    <div>
+      <h2>{user.username}</h2>
       {editMode ? (
         <UserForm user={user} onUpdate={handleUpdateUser} onCancel={toggleEditMode} />
       ) : (
         <div>
-          <div className="user-details">
-            <p>Bio: {user.bio}</p>
-            <p>Email: {user.email}</p>
-            <p>Username: {user.username}</p>
-          </div>
-          <button className="edit-profile-button" type="button" onClick={toggleEditMode}>
+          <p>Bio: {user.bio}</p>
+          <p>Email: {user.email}</p>
+          <p>Username: {user.username}</p>
+          <button type="button" onClick={toggleEditMode}>
             Edit Profile
           </button>
         </div>
       )}
 
-      <div className="user-posts">
-        <h3>Posts</h3>
-        <div className="post-grid">
-          {user.posts.map((post) => (
-            <div key={post.id} className="post-card">
-              <button className="delete-post-button" onClick={() => deletePost(post.id)}>
-                Delete
-              </button>
-              <h4>{post.title}</h4>
-              {post.image && (
-                <img src={post.image} alt="Post" className="post-image" />
-              )}
-              <p>{post.content}</p>
-              <div className="post-stats">
-                <div className="likes">{post.likes} Likes</div>
-                <div className="comments">
-                  <button onClick={toggleCommentsVisibility}>
-                    {showComments ? 'Hide Comments' : 'Show Comments'}
-                  </button>
-                </div>
-              </div>
-              {showComments && (
-                <div className="comments-popup">
-                  <h5>Comments:</h5>
-                  {post.comments.length === 0 ? (
-                    <p>No Comments</p>
-                  ) : (
-                    post.comments.map((comment) => (
-                      <div key={comment.id} className="comment">
-                        <p>{comment.content}</p>
-                        <p>Created At: {comment.created_at}</p>
-                        <button
-                          className="delete-comment-button"
-                          onClick={() => deleteComment(post.id, comment.id)}
-                        >
-                          Delete Comment
-                        </button>
-                      </div>
-                    ))
-                  )}
-                </div>
+      <h3>Posts</h3>
+      {user.posts.map((post) => (
+        <div key={post.id}>
+          <button onClick={() => deletePost(post.id)}>Delete Post</button>
+          <h4>{post.title}</h4>
+          {post.image && <img src={post.image} alt="Post" />}
+          <p>{post.content}</p>
+          <p>Likes: {post.likes}</p>
+          <h5>
+            <button onClick={toggleCommentsVisibility}>
+              {showComments ? 'Hide Comments' : 'Show Comments'}
+            </button>
+          </h5>
+          {showComments && (
+            <div>
+              <h5>Comments:</h5>
+              {post.comments.length === 0 ? (
+                <p>No Comments</p>
+              ) : (
+                post.comments.map((comment) => (
+                  <div key={comment.id}>
+                    <p>{comment.content}</p>
+                    <p>Created At: {comment.created_at}</p>
+                    <button onClick={() => deleteComment(post.id, comment.id)}>Delete Comment</button>
+                  </div>
+                ))
               )}
             </div>
-          ))}
+          )}
         </div>
-      </div>
+      ))}
     </div>
-  </div>
-);
+  );
 };
-
 
 export default UserProfile;

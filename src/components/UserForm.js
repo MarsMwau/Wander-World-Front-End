@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./UserForm.css"
 
 const UserForm = ({ user, onUpdate, onCancel }) => {
   const [updatedUser, setUpdatedUser] = useState({
@@ -40,31 +41,36 @@ const UserForm = ({ user, onUpdate, onCancel }) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <label>Bio:</label>
+    <form className="user-form" onSubmit={handleFormSubmit}>
+      <label className="form-label">Bio:</label>
       <textarea
+        className="form-input"
         name="bio"
         value={updatedUser.bio}
         onChange={handleInputChange}
       ></textarea>
-      <label>Email:</label>
+      <label className="form-label">Email:</label>
       <input
+        className="form-input"
         type="email"
         name="email"
         value={updatedUser.email}
         onChange={handleInputChange}
       />
-      <label>Username:</label>
+      <label className="form-label">Username:</label>
       <input
+        className="form-input"
         type="text"
         name="username"
         value={updatedUser.username}
         onChange={handleInputChange}
       />
-      <button type="submit">Save</button>
-      <button type="button" onClick={onCancel}>
-        Cancel
-      </button>
+      <div className="form-buttons">
+        <button className="form-button" type="submit">Save</button>
+        <button className="form-button" type="button" onClick={onCancel}>
+          Cancel
+        </button>
+      </div>
     </form>
   );
 };

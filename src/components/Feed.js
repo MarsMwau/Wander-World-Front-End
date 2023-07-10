@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import FeedPost from './FeedPost';
+import "./Feed.css"
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);

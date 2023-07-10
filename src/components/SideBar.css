@@ -9,7 +9,7 @@ main{
     background: #000;
     color: #fff;
     height: 100vh;
-    width: 200px;
+    width: 600px;
     transition: all 0.5s;
 }
 .top_section{
@@ -30,14 +30,14 @@ main{
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3.5rem;
   }
   
   .menuItem {
      display: flex;
     color: #fff;
     padding: 10px 15px;
-    gap: 12px;
+    gap: 15px;
     transition: all 0.5s;
     text-decoration: none;
   }

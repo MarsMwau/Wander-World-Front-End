@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./NewPostForm.css";
 
 const NewPostForm = ({ handleCreatePost }) => {
   const [title, setTitle] = useState('');
@@ -18,7 +19,10 @@ const NewPostForm = ({ handleCreatePost }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="new-post-form">
+      <span class="card__title">Create a New Post </span>
+    <p class="card__content">What is on your mind...</p>
+    <form className="card__form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}
@@ -26,6 +30,7 @@ const NewPostForm = ({ handleCreatePost }) => {
         placeholder="Title"
       />
       <textarea
+      type="text"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Content"
@@ -38,6 +43,8 @@ const NewPostForm = ({ handleCreatePost }) => {
       />
       <button type="submit">Create Post</button>
     </form>
+  </div>
+
   );
 };
 

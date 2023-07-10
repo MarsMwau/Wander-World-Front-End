@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Comments from './Comments';
+import { Avatar } from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import './PostItem.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSolidFaHeart, faHeart } from '@fortawesome/free-solid-svg-icons';
+
 
 const PostItem = ({ post }) => {
   const [comments, setComments] = useState([]);
@@ -42,7 +48,7 @@ const PostItem = ({ post }) => {
       const { message, post: updatedPost, liked_by_current_user } = response.data;
       setLiked(liked_by_current_user);
       setLikeCount(updatedPost.likes);
-      console.log(message);
+      alert('Post liked successfully!');
     } catch (error) {
       console.error('Error liking post:', error);
     }
@@ -64,7 +70,7 @@ const PostItem = ({ post }) => {
       const { message, post: updatedPost, liked_by_current_user } = response.data;
       setLiked(liked_by_current_user);
       setLikeCount(updatedPost.likes);
-      console.log(message);
+      alert('Post unliked successfully!');
     } catch (error) {
       console.error('Error unliking post:', error);
     }
@@ -107,27 +113,42 @@ const PostItem = ({ post }) => {
   };
 
   if (!post) {
-    return <div>Loading...</div>;
+    return <h1>Loading...</h1>
+    ;
   }
 
   return (
-    <div>
-      <p>{post.author}</p>
-      <p>{formatDateTime(post.created_at)}</p>
-      <h2>{post.title}</h2>
-      <p>{post.content}</p>
-      {post.image && <img src={post.image} alt="Post" />}
-      <p>Likes: {likeCount}</p>
-      <button onClick={handleLikeUnlike}>{liked ? 'Unlike' : 'Like'}</button>
-      <button onClick={toggleComments}>
-        {showComments ? 'Hide Comments' : 'Show Comments'}
-      </button>
+    <div className="post">
+      <div className="post__container">
+        <div className="post__info">
+          <div className="post__header">
+            <Avatar src={<AccountCircleIcon />} className="post-avatar" />
+            <h2>{post.author}  </h2>
+            <p>  {formatDateTime(post.created_at)}</p>
+          </div>
+          <div className="post__details">
+            <h3>{post.title}</h3>
+            {post.image && <img src={post.image} alt="Post" />}
+            <p>{post.content}</p>
+          </div>
+        </div>
 
-      {showComments && <Comments
-      comments={post.comments} 
-      postId={post.id}
-      userId={post.userId} />}
-
+        <div className="post__options">
+          <div className="post__option-like">
+            <button onClick={handleLikeUnlike}>{liked ? "UnLike" : "Like"}</button>
+            <p>{likeCount}</p>
+          </div>
+          <div className="post__option-comment">
+            <button onClick={toggleComments}>
+              {showComments ? "Comments" : "Comments"}
+            </button>
+            
+            <div className={`comments-popup ${showComments ? 'show' : ''}`}>
+              <Comments comments={post.comments} postId={post.id} userId={post.userId} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
