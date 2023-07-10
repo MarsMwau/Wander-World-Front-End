@@ -36,10 +36,10 @@ The app should now be running at `http://localhost:4000`.
 
 ## Contributors
 The following people contributed to this project:
-Derek -https://github.com/dMuguti
-Melchizedek -https://github.com/melmuya
-Nathan -https://github.com/nathan-netizenn
-William -https://github.com/willtemmy
+1. Derek -https://github.com/dMuguti
+2. Melchizedek -https://github.com/melmuya
+3. Nathan -https://github.com/nathan-netizenn
+4. William -https://github.com/willtemmy
 
 ## Contact Information
 If you have any questions or concerns, please contact me at marthamumbua16@gmail.com
