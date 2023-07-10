@@ -38,6 +38,7 @@ function SignUp() {
   
 
   return (
+    <div className="Signup">
     <form onSubmit={handleSubmit}>
       <label>
         Email:
@@ -60,6 +61,7 @@ function SignUp() {
         <Link to="/login">Already have an account?</Link>
       </p>
     </form>
+    </div>
   );
 }
 

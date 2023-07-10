@@ -1,0 +1,138 @@
+  .post {
+    width: 100%;
+    margin-top: 20px;
+    max-width: 600px;
+  }
+  
+  .post__container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 7px -7px rgba(7, 7, 7, 0.75);
+    padding: 15px;
+  }
+  
+  .post__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .post__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+  }
+  
+  .post-avatar {
+    margin-right: 10px;
+  }
+  
+  .post__header p {
+    flex-basis: 100%;
+    margin-left: 13rem
+  }
+  
+  .post__details {
+    flex-basis: 100%;
+  }
+  
+  .post__details h3 {
+    margin-top: 1px;
+  }
+  
+  .post__details img {
+    width: 100%;
+    margin-bottom: 6px;
+    height: 500px;
+  }
+  
+  .post__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .post__option-like {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+
+  .post__option-comment .comments-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .post__option-comment .comments-popup.show {
+    display: block;
+  }
+  
+  .post__option button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .post__option p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .ball {
+    position: relative;
+    bottom: 200px;
+    left: calc(100% - 20px);
+    width: 200x;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    animation: ball-move8234 3s ease-in-out 1s infinite alternate;
+  }
+  
+  .ball::after {
+    position: absolute;
+    content: '';
+    top: 50px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+  }
+  .spinner {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+    width: 300px;
+    height: 300px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  }
+  
+  .spinner1 {
+    background-color: rgb(36, 36, 36);
+    width: 150px;
+    height: 150px;
+    border-radius: 90px;
+    filter: blur(10px);
+  }
+  
+  @keyframes spinning82341 {
+    to {
+      transform: rotate(360deg);
+    }
+  }

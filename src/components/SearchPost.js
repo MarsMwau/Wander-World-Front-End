@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
+import "./SearchPost.css"
+import { Avatar } from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const SearchPost = () => {
   const [posts, setPosts] = useState([]);
@@ -46,21 +49,32 @@ const SearchPost = () => {
   };
 
   return (
-    <div>
+    <div className="search-post">
       <SearchBar handleSearch={handleSearch} />
-      <button onClick={sortPostsByLikes}>Sort by Likes</button>
+      <button className="btn" onClick={sortPostsByLikes}>Sort by Likes</button>
 
       {loading ? (
-        <p>Loading...</p>
+        <div class="loader">
+        <span class="loader-text">loading</span>
+          <span class="load"></span>
+      </div>
       ) : (
-        posts.map((post) => (
-          <div key={post.id}>
-            <h2>{post.title}</h2>
-            <p>Author: {post.author}</p>
-            {post.image && <img src={post.image} alt="Post" />}
-            <p>Likes: {post.likes}</p>
-          </div>
-        ))
+        <div className="post-list">
+          {posts.map((post) => (
+            <div key={post.id} className="post-card">
+              <div className="header">
+              <Avatar src={<AccountCircleIcon />} className="post-avatar" />
+              <h2>{post.author}</h2>
+              </div>
+              <p>{post.title}</p>
+              {post.image && <img src={post.image} alt="Post" className="post-image" />}
+              <div className="footer">
+              <p>{post.content}</p>
+              <p>Likes: {post.likes}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );

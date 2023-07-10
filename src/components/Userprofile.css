@@ -1,0 +1,220 @@
+.user-posts {
+  margin-top: 20px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.post-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+  background-color: white;
+  color: black
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+}
+
+.user-details {
+  margin-bottom: 10px;
+}
+
+.edit-profile-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post-card h4 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.post-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comments-popup {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.comments-popup h5 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.comments-popup p {
+  margin: 0;
+}
+
+.comment {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.comment button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+}
+
+
+/* .user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+}
+
+.user-details {
+  margin-bottom: 10px;
+}
+
+.edit-profile-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-profile-button:hover {
+  background-color: #0056b3;
+}
+
+.user-posts {
+  margin-top: 20px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.post-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+}
+
+.delete-post-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.post-card h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  margin: 0;
+}
+
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comments-popup {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.comments-popup h5 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.comments-popup p {
+  margin: 0;
+}
+
+.comment {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.delete-comment-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.user-profile {
+  margin: 20px;
+}
+ */

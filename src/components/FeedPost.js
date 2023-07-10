@@ -1,5 +1,6 @@
 import React from 'react';
 import PostItem from './PostItem';
+import "./FeedPost.css"
 
 const FeedPost = ({ posts }) => {
   return (

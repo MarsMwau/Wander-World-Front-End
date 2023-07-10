@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMagnifyingGlass,faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+
 import {
     FaTh,
     FaBars,
@@ -12,6 +17,23 @@ const SideBar = ({children}) => {
     const [selected, setSelected] = useState(false); 
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
+    const navigate = useNavigate();
+    const[isLoggedIn ,setLoggedIn] = useState(true);
+    const handleLogout = async () => {
+        try {
+          const token = localStorage.getItem('token');
+          await axios.delete('/logout', {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setLoggedIn(false);
+          localStorage.removeItem('token');
+          navigate.push('/login');
+        } catch (error) {
+          console.error('Error logging out:', error);
+        }
+      };
     const menuItem=[
       {
         path:"/feed",
@@ -21,18 +43,26 @@ const SideBar = ({children}) => {
     {
         path:"/new",
         name:"Create",
-        icon:<FaUserAlt/>
+        icon:<FontAwesomeIcon icon={faPlus} />
+
     },
     {
       path:"/search",
       name:"Search",
-      icon:<FaThList/>
+      icon:<FontAwesomeIcon icon= {faMagnifyingGlass} />
   },
     {
         path:"/my-profile",
         name:"My Profile",
         icon:<FaUserAlt/>
-    }
+    },
+    {
+        path: '/logout',
+        name: 'Logout',
+        icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+        onClick: handleLogout, 
+      }
+
     ]
     return (
         <div className="container">

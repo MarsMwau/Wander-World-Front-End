@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./Comments.css"
 
 const Comments = ({ comments, postId, userId }) => {
   const [newComment, setNewComment] = useState('');
@@ -86,23 +87,25 @@ const Comments = ({ comments, postId, userId }) => {
   };
 
   return (
-    <div>
+    <div className="comments-container">
       {updatedComments.map((comment) => (
-        <div key={comment.id}>
-          <p>{formatDateTime(comment.created_at)}</p>
-          <p>{comment.content}</p>
+        <div className="comment" key={comment.id}>
+          <p className="comment-date">{formatDateTime(comment.created_at)}</p>
+          <p className="comment-content">{comment.content}</p>
           {comment.user_id === userId && (
-            <button onClick={() => handleCommentDelete(comment.id)}>Delete</button>
+            <button className="comment-delete" onClick={() => handleCommentDelete(comment.id)}>Delete</button>
           )}
         </div>
       ))}
-      <input
-        type="text"
-        value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
-        placeholder="Add a comment"
-      />
-      <button onClick={handleCommentSubmit}>Post</button>
+      <div className="comment-input">
+        <input
+          type="text"
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+          placeholder="Add a comment"
+        />
+        <button onClick={handleCommentSubmit}>Post</button>
+      </div>
     </div>
   );
 };
