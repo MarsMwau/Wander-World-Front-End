@@ -48,7 +48,7 @@ const PostItem = ({ post }) => {
       const { message, post: updatedPost, liked_by_current_user } = response.data;
       setLiked(liked_by_current_user);
       setLikeCount(updatedPost.likes);
-      console.log(message);
+      alert('Post liked successfully!');
     } catch (error) {
       console.error('Error liking post:', error);
     }
@@ -70,7 +70,7 @@ const PostItem = ({ post }) => {
       const { message, post: updatedPost, liked_by_current_user } = response.data;
       setLiked(liked_by_current_user);
       setLikeCount(updatedPost.likes);
-      console.log(message);
+      alert('Post unliked successfully!');
     } catch (error) {
       console.error('Error unliking post:', error);
     }
@@ -135,18 +135,14 @@ const PostItem = ({ post }) => {
 
         <div className="post__options">
           <div className="post__option-like">
-            <button onClick={handleLikeUnlike}>{liked ? <faHeart /> : <faSolidFaHeart />}</button>
+            <button onClick={handleLikeUnlike}>{liked ? "UnLike" : "Like"}</button>
             <p>{likeCount}</p>
           </div>
           <div className="post__option-comment">
             <button onClick={toggleComments}>
-              {showComments ? <faSolidFaComment /> : <faLightFaComment  />}
+              {showComments ? "Comments" : "Comments"}
             </button>
-            {/* {showComments && (
-              <div className="comments-popup">
-                <Comments comments={post.comments} postId={post.id} userId={post.userId} />
-              </div>
-            )} */}
+            
             <div className={`comments-popup ${showComments ? 'show' : ''}`}>
               <Comments comments={post.comments} postId={post.id} userId={post.userId} />
             </div>

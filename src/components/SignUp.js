@@ -1,4 +1,3 @@
-// SignUp.js
 import React, { useState } from "react";
 import "./signup.css";
 import { Link } from "react-router-dom";
@@ -8,6 +7,7 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,29 +38,30 @@ function SignUp() {
   
 
   return (
-    <div className="Signup">
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      </label>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      </label>
-      <label>
-        Confirm Password:
-        <input type="password" value={passwordConfirmation} onChange={e => setPasswordConfirmation(e.target.value)} />
-      </label>
-      <input type="submit" value="Sign Up" />
-      <p>
-        <Link to="/login">Already have an account?</Link>
-      </p>
-    </form>
+    <div className="signup">
+      <form onSubmit={handleSubmit}>
+        <h1 className="signup__title">Sign Up</h1>
+        <div className="signup__input-wrapper">
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" className="signup__input" value={email} onChange={e => setEmail(e.target.value)} />
+        </div>
+        <div className="signup__input-wrapper">
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" className="signup__input" value={username} onChange={e => setUsername(e.target.value)} />
+        </div>
+        <div className="signup__input-wrapper">
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" className="signup__input" value={password} onChange={e => setPassword(e.target.value)} />
+        </div>
+        <div className="signup__input-wrapper">
+          <label htmlFor="password-confirmation">Confirm Password:</label>
+          <input type="password" id="password-confirmation" className="signup__input" value={passwordConfirmation} onChange={e => setPasswordConfirmation(e.target.value)} />
+        </div>
+        <button type="submit" className="signup__button">Sign Up</button>
+        <p className="signup__login-link">
+          Already have an account? <Link to="/login" className="signup__login-link-text">Log in</Link>
+        </p>
+      </form>
     </div>
   );
 }

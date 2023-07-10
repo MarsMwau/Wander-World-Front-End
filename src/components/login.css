@@ -1,108 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
-
-
-body{
-  background: rgb(34,193,195);
-  background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
-  font-family: "work sans";
-}
-
-html{
-  font-size: 100%;
-}
-
-.login{
-  max-width: 800px;
-  width: 30%;
-  height: 60%;
-  margin: 100px auto;
-  background-color: #C5C6C7;
-  border-radius: 25px;
-  position: relative;
-}
-
-.login .container {
-  max-width: 800px;
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
   margin: auto;
+  color:#000000;
 }
 
-.login .backImg {
-  width: 100%;
-  height: 50vh;
+.form {
   position: relative;
-}
-
-.login .backImg img {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-}
-
-.login .text {
-  text-align: center;
-  font-family: 'open sans', sans-serif;
-  padding: 2rem 0;
-  margin: 0;
-  font-size: 2rem;
-  position: absolute;
-  top: 40%;
-  left: 50%;
   z-index: 1;
-  color: #66FCF1; 
-  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.login form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2rem;
-  max-width: 100%;
-  margin-top: 20px; 
-}
-
-.login form input {
-  width: 80%;
+.form input[type="text"],
+.form input[type="password"] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
   box-sizing: border-box;
-  border: none;
-  font-size: 1.3rem;
-  padding-left: 1.5rem;
-  padding-bottom: 1rem;
-  box-shadow: inset 0px -3px 0px 0px #C5C6C7; 
-  transition: box-shadow 0.2s ease-in;
-  margin-bottom: 10px;
-  background: #1F2833; 
-  color: #66FCF1; 
+  font-size: 14px;
 }
 
-.login form input:focus{
-   box-shadow: inset 0px -3px 0px 0px #45A29E; 
-   outline: none;
+.form button[type="submit"] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4c6baf;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #020202;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+          transition: all 0.3 ease;
 }
 
-.login form input::-webkit-input-placeholder{
-  opacity: 1;
-  transition: opacity 0.25s ease-out;
-  color: #C5C6C7; 
+.form button[type="submit"]:hover,.form button[type="submit"]:active,.form button[type="submit"]:focus {
+    background-color: #a04e43;
 }
 
-.login form input:hover::-webkit-input-placeholder,
-.login form input:focus::-webkit-input-placeholder{
-  opacity: 0;
+.form .message {
+    margin: 15px 0px;
+    color: #000000;
+    font-size:12px;
 }
 
-.login form span {
-  align-self: start;
-  padding-left: 4.5rem;
-  padding-bottom: 0.5rem;
-  color: #C5C6C7; 
-  display: block;
-}
-
-.login form .button {
-  border-radius: 25px;
-  width: 80%;
-  height: 40px;
-  background-color: #45A29E; 
-  color: #1F2833; 
+.form .message a {
+    color:#1b4985;
+    text-decoration:none;
 }
